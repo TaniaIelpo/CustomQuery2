@@ -67,7 +67,8 @@ public class FlightController {
 
     @GetMapping("/custom")
     public List<Flight> getCustomFlight(@RequestParam FlightStatus p1, @RequestParam FlightStatus p2) {
-        return flightService.getCustomFlight(p1, p2);
+        System.out.println("p1= "+p1.toString()+" p2= "+p2.toString());
+        return flightService.getCustomFlight(p1,p2);
     }
 
 }

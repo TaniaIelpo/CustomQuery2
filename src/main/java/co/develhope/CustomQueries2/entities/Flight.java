@@ -11,11 +11,11 @@ import javax.persistence.*;
  * @author Tania Ielpo
  */
 
-@Entity
+@Entity(name="flight")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Table(name="flight")
 public class Flight {
 
     /**
@@ -34,6 +34,8 @@ public class Flight {
     private String description;
     private String fromAirport;
     private String toAirport;
+
+    @Column(name = "flight_status")
     private FlightStatus flightStatus;
 
 

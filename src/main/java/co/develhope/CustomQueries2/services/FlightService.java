@@ -22,7 +22,6 @@ public class FlightService {
 
     @Autowired
     FlightRepository flightRepository;
-
     /**
      * store same flights in db
      * all the string values are randomly generated (using random.ints())
@@ -101,13 +100,7 @@ public class FlightService {
      */
 
     public List<Flight> getCustomFlight(FlightStatus p1, FlightStatus p2){
-
-        List<Flight> flightList=new ArrayList<>();
-
-            for (Flight item : flightRepository.findAll()) {
-                if (item.getFlightStatus().equals(p1) || item.getFlightStatus().equals(p2)) flightList.add(item);
-            }
-
-        return flightList;
+        System.out.println("p1= "+p1.toString()+" p2= "+p2.toString());
+        return flightRepository.getCustomFlight(p1.ordinal(),p2.ordinal());
     }
 }
